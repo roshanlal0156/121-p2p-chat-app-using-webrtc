@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <style>
+      .sender-msg span {
+        margin: 0;
+        padding: 0;
+        background-color: rgb(13, 110, 253);
+        color: white;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        padding-left: 15px;
+        padding-right: 20px;
+        border-radius: 10px 10px 10px 0px;
+      }
+      .receiver-msg span {
+        margin: 0;
+        padding: 0;
+        background-color: rgb(255, 193, 7);
+        color: rgb(0, 0, 0);
+        padding-top: 7px;
+        padding-bottom: 7px;
+        padding-left: 20px;
+        padding-right: 15px;
+        border-radius: 10px 10px 0px 10px;
+      }
+      .starting-msg span {
+        margin: 0;
+        padding: 0;
+        color: rgb(133, 130, 130);
+        padding-top: 7px;
+        padding-bottom: 7px;
+        padding-left: 20px;
+        padding-right: 15px;
+        border-radius: 10px 10px 0px 10px;
+      }
+
+      .starting-msg {
+        text-align: center;
+      }
+      .sender-msg {
+        text-align: start;
+        margin: 20px;
+      }
+      .receiver-msg {
+        text-align: end;
+        margin: 20px;
+      }
+      #i-phone {
+        display: none;
+        background-color: aliceblue;
+        border: 3px solid rgb(200, 198, 198);
+        border-radius: 5px;
+        box-shadow: 3px 3px 12px 6px rgb(118, 117, 117);
+        padding: 30px;
+        margin-top: 20px;
+      }
+      #i-phone-msg-list {
+        margin: 0px;
+        padding: 0;
+        list-style-type: none;
+        height: 600px;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+      }
+      #i-phone-typing {
+        margin-top: 5px;
+        width: 95%;
+        height: 50px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        box-shadow: 3px 3px 6px 2px rgb(136, 134, 134);
+        border-left: 10px solid rgb(255, 255, 255);
+        border-right: 10px solid rgb(255, 255, 255);
+      }
+      #type-msg {
+        flex: 100%;
+        height: 100%;
+        border: none;
+        padding-left: 30px;
+      }
+      #type-msg:focus {
+        outline: none;
+      }
+      #send-msg-btn {
+        width: 60px;
+        height: 100%;
+        padding: 10px;
+        border: none;
+        border-left: 1px solid rgb(147, 143, 143);
+        cursor: pointer;
+        background-color: white;
+      }
+      ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent; /* make scrollbar transparent */
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container text-center">
+      <div
+        class="btn-group mt-4"
+        role="group"
+        aria-label="Basic outlined example"
+      >
+        <button type="button" id="create-chat-room" class="btn btn-primary">
+          Create Chat
+        </button>
+        <button
+          type="button"
+          id="join-chat-room"
+          class="btn btn-outline-warning"
+        >
+          Join Chat
+        </button>
+      </div>
+      <div class="mt-4 d-none" id="form-room-id">
+        <label for="room-id">Room ID: </label>
+        <input id="room-id" type="text" />
+        <button id="submit-btn">Submit</button>
+      </div>
+      <div class="mt-4 d-none" id="created-room-id">
+        <label for="created-room-id-input">Chat ID: </label>
+        <input id="created-room-id-input" type="text" />
+      </div>
+
+      <div id="i-phone">
+        <ul id="i-phone-msg-list">
+          <li class="starting-msg">
+            <span>Welcome my friend! Welcome (:</span>
+          </li>
+        </ul>
+
+        <div id="i-phone-typing">
+          <input id="type-msg" type="text" />
+          <button id="send-msg-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+  <script type="module" src="../public/js/home.js"></script>
+</html>
